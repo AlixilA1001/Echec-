@@ -1,0 +1,259 @@
+body {
+  background-color: rgb(247, 202, 202);
+}
+/* -----------------------------STYLE DE LA PAGE ANALYSE--------------------------------------*/
+
+/*---topnav---*/
+
+.topnav {
+  position:fixed;
+  width: 200px;
+  height: 660px;
+  background-color: #333;
+  border-radius: 4px;
+  border: 4px solid rgb(220, 218, 218);
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);  
+}
+
+.topnav a {
+  text-decoration: none;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+  position: absolute;
+}
+
+.topnav a:hover {
+  font-weight: bolder;
+}
+
+.topnav .accueil {
+  top: 30px;
+  left: 20px;
+}
+
+.topnav .historique {
+  top: 90px;
+  left: 20px;
+}
+
+.topnav .jouer {
+  top: 180px;
+  left: 20px;
+}
+
+.topnav .ordi {
+  top: 240px;
+  left: 20px;
+}
+
+.topnav .connex {
+  top: 610px;
+  left: 20px;
+}
+
+.topnav .ordi:hover {
+  left: 5px;
+}
+
+.topnav .connex:hover {
+  left: 5px;
+}
+
+/*---pgn---*/
+
+.pgn {
+  position: fixed;
+  width: 365px;
+  height: 300px;
+  top: 150px;
+  left: 1120px;
+  padding: 1em;
+  background-color: rgb(220, 218, 218);
+  border-radius: 4px;
+  border: 2px solid #333;
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+}
+
+#boutonPgn {
+  background-color: white;
+}
+
+/*---coupjoue---*/
+
+.coupjoue table {
+  position: fixed;
+  width: 260px;
+  height: 200px;
+  background-color: rgb(220, 218, 218);
+  border-radius: 4px;
+  border: 2px solid #333;
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2); 
+  top: 55px;
+  left: 250px;
+}
+
+#jeu table {
+  position: fixed;
+  top: 60px;
+  bottom: 100px; 
+  left: 1200px;
+  height: 200px;
+}
+
+#StatusPGN{
+  position: relative;
+  background-color: rgb(220, 218, 218);
+  border-bottom: 2px solid #333;
+  height: 450px;
+}
+
+#piecep{
+  width: 28px;
+  height: 28px;
+}
+
+#pionp {
+  position: relative;
+  background-color: rgb(220, 218, 218);
+  border-bottom: 1px solid #333;
+}
+
+#pionphaut {
+  position: relative;
+  background-color: rgb(220, 218, 218);
+  border-bottom: 2px solid #333;
+}
+
+/*---cadreEchiquier---*/
+
+#cadreEchiquier{
+  position: fixed; 
+  width: 570px;
+  height: 650px; 
+  background-color: rgb(220, 218, 218);
+  border-radius: 4px;
+  border: 2px solid #333;
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2); 
+  left: 530px;
+  top: 10px;
+}
+
+#cadreEchiquier p {
+  margin-left: 215px;
+  margin-top: 6px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 3px 22px 3px;
+  height: 10px;
+}
+
+#myBoard{
+  position: fixed;
+  width: 540px; 
+  left: 550px ;
+  top: 110px;
+}
+
+/*---Boutons 'Précédent', 'Suivant' et 'Inverser la couleur des pièces'---*/
+
+#prev {
+  position: relative;
+  background-color: white;
+  left: 60px;
+}
+
+#next {
+  position: relative;
+  background-color: white;
+  left: 90px;
+}
+
+#flip{
+  background-color: white;
+  left: 350px;
+  position: absolute;
+}
+
+
+
+
+
+
+/* Définition des flèches dans Analyse */
+/*
+.farriere{
+    width: 40px;
+    height: 40px;
+  
+    background-color: black;
+    clip-path: polygon(100% 100%, 100% 0, 0 50%);
+    margin-left:220px;
+    position: fixed;
+    margin-top:568px;
+  }
+  
+  .favant{
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  clip-path: polygon(0 0,0 100%,100% 50%);
+  margin-left:290px;position: fixed; margin-top:568px;
+  }
+
+  /* Style PGN  */
+  /*
+  #ppgn{
+    position:fixed;
+    color:whitesmoke;
+    margin-left:1000px;
+    margin-top:150px;
+    font-family: Helvetica, sans-serif;
+  }
+  #pgn{
+    width: 400px; 
+    height: 200px; 
+    margin-top:300px;
+    position: fixed;
+    margin-left: 1000px;
+  }
+  #pgn2{
+    margin-top:500px;
+    position: fixed;
+    margin-left: 1050px;
+  }
+  #pgn3{
+    background-color:antiquewhite;
+    height: 50px;width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    min-height: 10em;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  /* Analyse */
+  /*
+  #Analyse{
+    margin-top: 15px;margin-left:227px;font-size: 30px;
+  } 
+  #cadre{
+    width:560px;height:670px; position:fixed; background-color:antiquewhite;
+    margin-left: 392px ;margin-top:50px ; top:30px;
+  }
+  
+#coupjoue{
+    margin-top:-600px; margin-left:50px;position:fixed;overflow:auto;
+}
+
+#flipimage{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    margin-left:100px;
+    margin-top:-5px;
+    top:623px;
+    left:395px;
+}
+
+
+

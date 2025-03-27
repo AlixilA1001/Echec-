@@ -1,0 +1,118 @@
+.clearfix-7da63 {
+  clear: both;
+}
+.board-b72b1 {
+  border: 2px solid #404040;
+  box-sizing: content-box;
+  margin: 0 auto; /* ajouter cette ligne pour centrer le tableau */
+
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.timer span:not(:last-child) {
+  left:1rem;
+}
+.square-55d63 {
+  float: left;
+
+  /* position: relative; */
+  
+
+  /* disable any native browser highlighting */
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.white-1e1d7 {
+  background-color: #f0d9b5;
+  color: #b58863;
+}
+
+.black-3c85d {
+  background-color: #b58863;
+  color: #f0d9b5;
+}
+
+.highlight1-32417, .highlight2-9c5d2 {
+  box-shadow: inset 0 0 3px 3px yellow;
+}
+
+.notation-322f9 {
+  cursor: default;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  position: absolute;
+}
+
+.alpha-d2270 {
+  bottom: 1px;
+  right: 3px;
+}
+
+.numeric-fc462 {
+  top: 2px;
+  left: 2px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#chessboard {
+  border: 2px solid #aaa;
+  margin: 0 auto;
+  overflow: auto;
+}
+th{
+  padding:20px;
+  border:10px;
+}
+
+#tableau1
+{
+  width : 400px;
+  height : 20vh;
+  float:left;
+  background : #00aaff;
+}
+
+#container
+{
+  margin-left : 420px;
+  width : 400px;
+  padding : 10px;
+  background : #ffaa55;
+}
+
+#tableau2
+{
+  width : 150px;
+  height : 50vh;
+  float:left;
+  background : #55aab4;
+}
+#joueur1 { 
+  float: left; 
+  height: 50px; 
+  width: 50%; 
+  left:200px;
+  margin-left:20px;
+  } 
+  #tableau2
+{
+  width : 150px;
+  height : 50vh;
+  float:left;
+  background : #55aab4;
+}
