@@ -1,26 +1,89 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeu d'échecs</title>
-    <link rel="stylesheet" href="../css/pageA.css">
-  </head>
-  
-  <body>
-    <div class="topnav">
-      <a class="accueil" href="/Accueil">Accueil</a><br>
-      <a class="historique" href="/Historique">Historique et Analyse</a><br>
-      <a class="jouer" href="/Partie">Jouer en ligne</a><br>
-      <a class="ordi" href="/Ordi">Contre ordinateur</a><br>
-      <a class="connex" href="/Pere">Page de connexion</a>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chess System v1.0</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/pageA.css" />
+</head>
+<body>
 
-    <div class="vertical-menu">
-      <a class="historique" href="/Historique">Historique et Analyse</a>  
-      <a class="jouer" href="/Partie">Jouer en ligne</a>
-      <a class="ordi" href="/Ordi">Jouer contre l'ordinateur</a>
+  <!-- Écran d’intro -->
+  <div class="intro-screen" id="intro">
+    <pre id="intro-output"></pre>
+  </div>
+
+  <!-- Contenu principal -->
+  <div class="internal-screen hidden" id="mainContent">
+    <p class="subtext" id="subtext">Faites votre choix...</p>
+    <div class="menu-container">
+      <a class="menu-button" href="/Partie">Jouer en ligne</a>
+      <a class="menu-button" href="/Analyse">Analyse de partie</a>
+      <a class="menu-button" href="/Ordi">Jouer contre un Bot</a>
     </div>
-  </body>
+  </div>
+
+  <!-- Bouton Aide -->
+  <button class="help-button hidden" id="helpToggle">Aide</button>
+
+  <!-- Panneau d'aide -->
+  <div class="help-panel" id="helpPanel">
+    <div class="help-header">
+      <span>Aide</span>
+      <button class="close-help" id="closeHelp">X</button>
+    </div>
+    <div class="help-content">
+      <p><strong>Jouer en ligne :</strong> Lance une partie contre un autre joueur.</p>
+      <p><strong>Analyse de partie :</strong> Permet de revoir une partie et d’étudier les coups.</p>
+      <p><strong>Jouer contre un Bot :</strong> Affronte une IA avec différents niveaux de difficulté.</p>
+    </div>
+  </div>
+
+  <script>
+    const introLines = [
+      "Bienvenue dans Chess System v1.0",
+      "Ravi de vous revoir, stratège.",
+      "Système prêt.",
+      "Appuyez sur un mode pour commencer."
+    ];
+
+    const introOutput = document.getElementById("intro-output");
+    const introScreen = document.getElementById("intro");
+    let currentLine = 0;
+
+    function showIntroLine() {
+      if (currentLine < introLines.length) {
+        introOutput.textContent += introLines[currentLine] + "\n";
+        currentLine++;
+        setTimeout(showIntroLine, 500);
+      } else {
+        setTimeout(() => {
+          introScreen.classList.add("fade-out");
+          document.getElementById("mainContent").classList.remove("hidden");
+          document.getElementById("mainContent").classList.add("visible");
+          document.getElementById("helpToggle").classList.remove("hidden");
+          document.getElementById("helpToggle").classList.add("visible");
+        }, 1000);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      showIntroLine();
+    });
+
+    // Aide
+    const helpToggle = document.getElementById("helpToggle");
+    const helpPanel = document.getElementById("helpPanel");
+    const closeHelp = document.getElementById("closeHelp");
+
+    helpToggle.addEventListener("click", () => {
+      helpPanel.classList.toggle("open");
+    });
+
+    closeHelp.addEventListener("click", () => {
+      helpPanel.classList.remove("open");
+    });
+  </script>
+</body>
 </html>

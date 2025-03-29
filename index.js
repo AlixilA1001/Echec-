@@ -23,20 +23,20 @@ app.get('/Ordi',function(req, res) {
 app.get('/Accueil',function(req, res) {
     res.sendFile(path.join(__dirname + '/html/pageAccueil.html'));
 });
-app.get('/Historique',function(req, res) {
-    res.sendFile(path.join(__dirname + '/html/Historique.html'));
-});
+// app.get('/Historique',function(req, res) {
+//     res.sendFile(path.join(__dirname + '/html/Historique.html'));
+// });
 app.get('/Analyse',function(req, res) {
     res.sendFile(path.join(__dirname + '/html/Analyse.html'));
 });
 
-app.get('/Connexion',function(req, res) {
-    res.sendFile(path.join(__dirname + '/html/Connexion.html'));
-});
+// app.get('/Connexion',function(req, res) {
+//     res.sendFile(path.join(__dirname + '/html/Connexion.html'));
+// });
 
-app.get('/Inscription',function(req, res) {
-    res.sendFile(path.join(__dirname + '/html/inscription.html'));
-});
+// app.get('/Inscription',function(req, res) {
+//     res.sendFile(path.join(__dirname + '/html/inscription.html'));
+// });
 
 app.get('/Pere',function(req, res) {
     res.sendFile(path.join(__dirname + '/html/Pere.html'));
@@ -46,9 +46,9 @@ app.get('/game',function(req, res) {
     res.sendFile(path.join(__dirname + '/html/game.html'));
 });
 
-app.get('/Historique2',function(req, res) {
-    res.sendFile(path.join(__dirname + '/html/Historique2Partie.html'));
-});
+// app.get('/Historique2',function(req, res) {
+//     res.sendFile(path.join(__dirname + '/html/Historique2Partie.html'));
+// });
 
 app.get('/Room', (req, res) => {
     res.sendFile(`${__dirname}/html/room.html`);
