@@ -2,12 +2,27 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Attente d'un adversaire</title>
+  <title>Waiting Room - Chess System v1.0</title>
+  <link rel="stylesheet" href="../css/room.css">
   <script src="/socket.io/socket.io.js"></script>
 </head>
-<body style="font-family:Arial; text-align:center; margin-top:50px;">
-  <h1>Salle d'attente</h1>
-  <p>En attente d'un adversaire...</p>
+
+<body>
+  <!-- Menu haut -->
+  <div class="topnav">
+    <a href="/Accueil">Accueil</a>
+    <a href="/Analyse">Analyse</a>
+    <a href="/Partie">Jouer en ligne</a>
+    <a href="/Ordi">Jouer contre un Bot</a>
+  </div>
+
+  <div class="room-container">
+    <h1>Salle d'attente</h1>
+    <p>En attente d'un adversaire...</p>
+    <div class="loading-dots">
+      <span>.</span><span>.</span><span>.</span>
+    </div>
+  </div>
 
   <script>
     const socket = io();

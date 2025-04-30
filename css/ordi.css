@@ -1,155 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Global */
 body {
-  background-color: rgb(247, 202, 202);
+    margin: 0;
+    padding: 0;
+    background-color: #000013;
+    font-family: 'Press Start 2P', monospace;
+    color: #00aaff;
+    overflow-x: hidden;
 }
-/* -----------------------------STYLE DE LA PAGE ORDI--------------------------------------*/
 
-/*---topnav---*/
-
+/* Top Navigation */
 .topnav {
-  position: fixed;
-  width: 200px;
-  height: 660px;
-  background-color: #333;
-  border-radius: 4px;
-  border: 4px solid rgb(220, 218, 218);
-  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);  
+    background-color: #111;
+    overflow: hidden;
+    padding: 10px 20px;
 }
 
 .topnav a {
-  text-decoration: none;
-  color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 20px;
-  position: absolute;
+    float: left;
+    color: #00aaff;
+    text-align: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-size: 0.7rem;
+    transition: 0.3s;
 }
 
 .topnav a:hover {
-  font-weight: bolder;
+    background-color: #00aaff;
+    color: black;
 }
 
-.topnav .accueil {
-  top: 30px;
-  left: 20px;
+/* Main Layout */
+.main-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 30px;
+    flex-wrap: wrap;
 }
 
-.topnav .historique {
-  top: 90px;
-  left: 20px;
+/* Panels */
+.left-panel, .center-panel, .right-panel {
+    background: #111;
+    border: 2px solid #00aaff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
 }
 
-.topnav .jouer {
-  top: 180px;
-  left: 20px;
+/* Specific Panel Sizes */
+.left-panel, .right-panel {
+    width: 250px;
+    min-width: 220px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre tous les éléments */
+    text-align: center;  /* Centre les textes */
 }
 
-.topnav .ordi {
-  top: 240px;
-  left: 20px;
+.center-panel {
+    width: 450px;
+    max-width: 90%;
+    text-align: center;
 }
 
-.topnav .connex {
-  top: 610px;
-  left: 20px;
+/* Échiquier */
+#myBoard {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
-.topnav .ordi:hover {
-  left: 5px;
+/* Contrôles sous l’échiquier */
+.controls {
+    margin-top: 20px;
 }
 
-.topnav .connex:hover {
-  left: 5px;
+.controls button {
+    background-color: #000;
+    color: #00aaff;
+    border: 2px solid #00aaff;
+    padding: 8px 12px;
+    margin: 5px;
+    font-size: 0.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-/*---coupjoue---*/
+.controls button:hover {
+    background-color: #00aaff;
+    color: black;
+}
 
-.coupjoue table {
-  position: fixed;
-  width: 260px;
-  height: 200px;
-  background-color: rgb(220, 218, 218);
+/* Champ texte PGN */
+textarea {
+    width: 100%;
+    max-width: 220px;
+    background: #000;
+    color: #00aaff;
+    border: 2px solid #00aaff;
+    padding: 10px;
+    font-size: 0.6rem;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+/* Bouton charger PGN */
+.left-panel button {
+    margin-top: 10px;
+    background-color: #000;
+    color: #00aaff;
+    border: 2px solid #00aaff;
+    padding: 8px 16px;
+    font-size: 0.6rem;
+    cursor: pointer;
+    font-family: 'Press Start 2P', monospace;
+    transition: background-color 0.3s;
+}
+
+.left-panel button:hover {
+    background-color: #00aaff;
+    color: black;
+}
+
+/* Status */
+.status-info {
+    margin-top: 20px;
+    font-size: 0.6rem;
+    line-height: 1.6;
+}
+
+/* Captured Pieces */
+.captured {
+    margin-top: 10px;
+}
+
+.captured p {
+    margin-bottom: 5px;
+    font-size: 0.6rem;
+}
+
+.captured .pieces img {
+    width: 24px;
+    margin: 2px;
+    vertical-align: middle;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-panel, .center-panel, .right-panel {
+        width: 90%;
+    }
+
+    #myBoard {
+        max-width: 300px;
+    }
+
+    textarea {
+        font-size: 0.5rem;
+    }
+
+    button, .controls button {
+        font-size: 0.5rem;
+        padding: 6px 10px;
+    }
+
+    .captured .pieces img {
+        width: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    #myBoard {
+        max-width: 250px;
+    }
+}
+
+.controls-button {
+  background-color: #000;
+  color: #00aaff;
+  border: 2px solid #00aaff;
+  padding: 8px 12px;
+  margin: 5px;
+  font-size: 0.6rem;
+  font-family: 'Press Start 2P', monospace; /* <-- Police arcade */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-transform: none;
+}
+
+.controls-button:hover {
+  background-color: #00aaff;
+  color: black;
+}
+
+#chatBox {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 100%;
+  max-width: 250px;
+  background-color: #111;
+  border: 2px solid #00aaff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#chatMessages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 5px;
+  font-size: 0.6rem;
+  background-color: #000;
+  color: #00aaff;
+  border: 1px solid #00aaff;
   border-radius: 4px;
-  border: 2px solid #333;
-  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2); 
-  top: 55px;
-  left: 250px;
+  margin-bottom: 10px;
 }
 
-#jeu table {
-  position: fixed;
-  top: 60px;
-  bottom: 100px; 
-  left: 1200px;
-  height: 200px;
+#chatForm {
+  display: flex;
+  gap: 5px;
 }
 
-#StatusPGN{
-  position: relative;
-  background-color: rgb(220, 218, 218);
-  border-bottom: 2px solid #333;
-  height: 450px;
-}
-
-#piecep{
-  width: 28px;
-  height: 28px;
-}
-
-#pionp {
-  position: relative;
-  background-color: rgb(220, 218, 218);
-  border-bottom: 1px solid #333;
-}
-
-#pionphaut {
-  position: relative;
-  background-color: rgb(220, 218, 218);
-  border-bottom: 2px solid #333;
-}
-
-/*---cadreEchiquier---*/
-
-#cadreEchiquier{
-  position: fixed; 
-  width: 570px;
-  height: 650px; 
-  background-color: rgb(220, 218, 218);
+#msg {
+  flex: 1;
+  padding: 6px;
+  font-size: 0.6rem;
+  background: black;
+  color: #00aaff;
+  border: 2px solid #00aaff;
   border-radius: 4px;
-  border: 2px solid #333;
-  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2); 
-  left: 530px;
-  top: 10px;
 }
 
-#cadreEchiquier p {
-  margin-left: 215px;
-  margin-top: 6px;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 3px 22px 3px;
-  height: 10px;
+#boutonEnvoyer {
+  background-color: #000;
+  color: #00aaff;
+  border: 2px solid #00aaff;
+  padding: 6px 10px;
+  font-size: 0.6rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
-#myBoard{
+#boutonEnvoyer:hover {
+  background-color: #00aaff;
+  color: black;
+}
+
+.winner-banner {
   position: fixed;
-  width: 540px; 
-  left: 550px ;
-  top: 110px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000013;
+  color: #00ff88;
+  font-size: 1.5rem;
+  border: 3px solid #00aaff;
+  padding: 30px 50px;
+  z-index: 999;
+  font-family: 'Press Start 2P', monospace;
+  text-align: center;
+  animation: blink 1.2s infinite;
+  border-radius: 8px;
 }
 
-/*---Bouton 'Inverser la couleur des pièces'---*/
-
-#flip{
-  position: absolute;
-  background-color: white;
-  left: 350px;
-  top: 50px;
-}
-
-/*---Bouton d'abandon---*/
-
-#abandonner {
-  position: absolute;
-  background-color: white;
-  left: 50px;
-  top: 50px;
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
