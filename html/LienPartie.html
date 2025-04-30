@@ -1,63 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Jeu d'échecs</title>
-        <link rel="stylesheet" href="../css/lienPartie.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créer une Partie - Chess System</title>
 
-        <script src="../jqueryy.js" defer></script>
-    </head>
+  <link rel="stylesheet" href="../css/lienPartie.css">
+  <script src="/socket.io/socket.io.js"></script>
+</head>
 
-    <body>
-        <div class="topnav">
-            <a class="accueil" href="/Accueil">Accueil</a>
-            <a class="historique" href="/Historique">Historique et Analyse</a>   
-            <a class="jouer" href="/Partie">Jouer en ligne</a>
-            <a class="ordi" href="/Ordi">Contre ordinateur</a>
-            <a class="connex" href="/Pere">Page de connexion</a>
-        </div>
+<body>
 
-        <div id="cadrePere">
-    <!-- 
-    <div class="mb">
-        <label for="username" class="form-label">Nom d'Utilisateur</label>
-        <input type="text" class="form-control" id="username" minlength="2" maxlength="20"
-            placeholder="Saisir votre nom d'utilisateur" required>
-    </div> -->
+  <!-- Menu haut -->
+  <div class="topnav">
+    <a href="/Accueil">Accueil</a>
+    <a href="/Analyse">Analyse</a>
+    <a href="/Ordi">Jouer contre un Bot</a>
+  </div>
 
-            <div id="lienpartie">
-                <div id="lien" >Lien de partie :</div>
-                
-                <div id="url">
-                    <div>
-                        <a href="/Game">URL</a>
-                    </div>
+  <!-- Conteneur principal -->
+  <div class="container">
+    <h1>Créer une Partie d'Échecs</h1>
+    <button id="createBtn">Créer une nouvelle partie</button>
+    <div id="linkContainer"></div>
+  </div>
 
-                    <div class="champ">
-                        <input type="text" id="gen" name="gen" size="50" placeholder="Génère l'URL de la partie.">
-                    </div>
+  <script>
+    document.getElementById('createBtn').addEventListener('click', async () => {
+      const response = await fetch('/createRoom');
+      const data = await response.json();
+      const roomId = data.roomId;
+      const link = `${window.location.origin}/Room/${roomId}`;
+      document.getElementById('linkContainer').innerHTML = `
+        <p>Donne ce lien à ton ami :</p>
+        <a href="${link}">${link}</a>
+      `;
+    });
+  </script>
 
-                    <div class="action">
-                        <input id="boutonLien" type="submit" value="Créer un lien">
-                    </div>
-                </div>
-            </div>
-
-            <div id="rejoindrepartie">
-                <div id="lien">Rejoindre une partie:</div>
-                    
-                <div id="url">
-                    <div class="champ">
-                        <input type="text" id="join" name="join" size="50" placeholder="Entrez l'URL d'une partie.">
-                    </div>
-
-                    <div class="action">
-                        <input id="boutonLien" type="submit"value="Soumettre">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
+</body>
 </html>
