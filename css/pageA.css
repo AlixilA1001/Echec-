@@ -1,140 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
-  background-color: rgb(247, 202, 202);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: radial-gradient(circle at center, #000013, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Press Start 2P', monospace;
+  color: #00aaff;
+  position: relative;
+  overflow: hidden;
 }
 
-/*--------------------- Définition de la NavBar ------------------*/
-
-.topnav {
+body::before {
+  content: "";
   position: fixed;
-  width: 200px;
-  height: 660px;
-  background-color: #333;
-  border-radius: 4px;
-  border: 4px solid rgb(220, 218, 218);
-  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);  
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 170, 255, 0.03),
+    rgba(0, 170, 255, 0.03) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  z-index: 0;
+  pointer-events: none;
+  animation: flicker 3s infinite;
 }
 
-.topnav a {
+@keyframes flicker {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.1; }
+}
+
+/* Intro */
+.intro-screen {
+  position: fixed;
+  inset: 0;
+  background-color: #000;
+  color: #00aaff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  padding: 40px;
+  white-space: pre-wrap;
+  transition: opacity 0.8s ease;
+}
+
+.intro-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Contenu */
+.internal-screen {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 600px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subtext {
+  font-size: 0.6rem;
+  color: #1e406b;
+  margin-bottom: 30px;
+  text-align: center;
+  animation: blink-link 3s infinite;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.menu-button {
+  background-color: #000;
+  border: 4px solid #00aaff;
+  color: #00aaff;
+  padding: 15px 25px;
+  font-size: 0.9rem;
   text-decoration: none;
-  color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 20px;
-  position: absolute;
+  box-shadow: 0 0 8px #1e406b;
+  transition: 0.3s ease;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
 }
 
-.topnav a:hover {
-  font-weight: bolder;
+.menu-button:hover {
+  background-color: #00aaff;
+  color: black;
+  box-shadow: 0 0 16px #00aaff, 0 0 32px #00aaff;
+  transform: scale(1.05);
 }
 
-.topnav .accueil {
-  top: 30px;
-  left: 20px;
+/* Aide */
+.help-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #000;
+  color: #00aaff;
+  border: 2px solid #00aaff;
+  padding: 8px 16px;
+  font-size: 0.6rem;
+  font-family: 'Press Start 2P', monospace;
+  cursor: pointer;
+  z-index: 15;
+  transition: background-color 0.3s;
 }
 
-.topnav .historique {
-  top: 90px;
-  left: 20px;
-}
-
-.topnav .jouer {
-  top: 180px;
-  left: 20px;
-}
-
-.topnav .ordi {
-  top: 240px;
-  left: 20px;
-}
-
-.topnav .connex {
-  top: 610px;
-  left: 20px;
-}
-
-.topnav .ordi:hover {
-  left: 5px;
-}
-
-.topnav .connex:hover {
-  left: 5px;
-}
-
-/*
-.topnav a.active {
-  background-color: antiquewhite;
+.help-button:hover {
+  background-color: #00aaff;
   color: black;
 }
 
-/*---vertical-menu---*/
-
-.vertical-menu a {
-  width: 600px;
-  height: 150px;
-  left: 500px;
-  background-color: #333;
-  border-radius: 4px;
-  border: 4px solid rgb(220, 218, 218);
-  position: absolute;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  font-size: 40px;
-  font-family:Georgia, 'Times New Roman', Times, serif;
+.help-panel {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100vh;
+  background-color: #111;
+  border-left: 4px solid #00aaff;
+  box-shadow: -5px 0 15px #00aaff55;
+  padding: 20px;
+  z-index: 14;
+  color: #00aaff;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8rem;
+  transition: right 0.4s ease;
 }
 
-.vertical-menu a:hover {
-  background-color: rgb(253, 190, 190);
-  color: black;
+.help-panel.open {
+  right: 0;
 }
 
-.vertical-menu .historique { 
-  top: 50px;
+.help-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
 }
 
-.vertical-menu .jouer {
-  top: 260px;
+.close-help {
+  background: none;
+  border: none;
+  color: #00aaff;
+  font-size: 0.8rem;
+  cursor: pointer;
 }
 
-.vertical-menu .ordi {
-  top: 470px;
+/* Utilitaires */
+@keyframes blink-link {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
 
-/*
-.vertical-menu {
-  width:700px;
-  height:500px;
-  position:fixed;
-  margin-left: 400px;
-  margin-top: 70px;
-  top:8px;
-  border: 4px solid rgb(220, 218, 218);
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
 }
 
-.vertical-menu a {
-  background-color: whitesmoke; 
-  color: black; 
-  display: block;
-  padding: 77px; 
-  text-decoration: none;
-  text-align: center;
-  font-size: 35px;
+.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-/*
-#tablee{
-  border:2;
-  width:300px;
-  height:60px;
-}
+/* Responsive */
+@media (max-width: 600px) {
+  .menu-button {
+    font-size: 0.75rem;
+    padding: 12px 20px;
+  }
 
-.board{
-  width: 392px; 
-  border-spacing:0
-}
+  .internal-screen {
+    padding: 30px 15px;
+  }
 
-/* Style des Pieces */
-/*
-.piece{
-  width:49px;
-  height:49px;
+  .subtext {
+    font-size: 0.5rem;
+  }
+
+  .help-panel {
+    width: 100vw;
+    right: -100vw;
+  }
+
+  .help-panel.open {
+    right: 0;
+  }
 }

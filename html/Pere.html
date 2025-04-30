@@ -1,22 +1,34 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeu d'échecs</title>
-    <link rel="stylesheet" href="../css/pere.css">
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chess System v1.0</title>
+  <link rel="stylesheet" href="../css/pere.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="arcade-wrapper">
+  <pre class="ascii-title">
+    ██████╗██╗  ██╗███████╗███████╗███████╗    ███████╗██╗   ██╗███████╗████████╗███████╗███╗   ███╗    ██╗   ██╗ ██╗    ██████╗ 
+    ██╔════╝██║  ██║██╔════╝██╔════╝██╔════╝    ██╔════╝╚██╗ ██╔╝██╔════╝╚══██╔══╝██╔════╝████╗ ████║    ██║   ██║███║   ██╔═████╗
+    ██║     ███████║█████╗  ███████╗███████╗    ███████╗ ╚████╔╝ ███████╗   ██║   █████╗  ██╔████╔██║    ██║   ██║╚██║   ██║██╔██║
+    ██║     ██╔══██║██╔══╝  ╚════██║╚════██║    ╚════██║  ╚██╔╝  ╚════██║   ██║   ██╔══╝  ██║╚██╔╝██║    ╚██╗ ██╔╝ ██║   ████╔╝██║
+    ╚██████╗██║  ██║███████╗███████║███████║    ███████║   ██║   ███████║   ██║   ███████╗██║ ╚═╝ ██║     ╚████╔╝  ██║██╗╚██████╔╝
+     ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝    ╚══════╝   ╚═╝   ╚══════╝   ╚═╝   ╚══════╝╚═╝     ╚═╝      ╚═══╝   ╚═╝╚═╝ ╚═════╝ 
+                                                                                                                                  
+    
+ </pre>
 
-  <body>
-    <div class="topnav">
-      <a class="pageConnex">Page de connexion</a>
-    </div>
+ <div class="arcade-cabinet">
+   <div class="screen">
+     <pre id="typed-output"></pre>
+     <div class="jouer-container">
+       <a id="jouer-link" href="/Accueil">> JOUER</a>
+     </div>
+   </div>
+ </div>
+</div>
 
-    <div class="vertical-menu">
-      <a class="inscription" href="/Inscription" >Inscription</a>  
-      <a class="connex" href="/Connexion">Connexion</a>
-      <a class="accueil" href="/Accueil">Invité</a>
-    </div>
-  </body>
-</html>
+<script src="../js/typing.js"></script>
+</body>
