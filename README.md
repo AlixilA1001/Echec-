@@ -99,6 +99,11 @@ Ouvrez [http://localhost:8000](http://localhost:8000) dans votre navigateur.
 
 ---
 
+
+## Analyse PGN 
+
+- Le PGN (Portable Game Notation) est un format texte standardisé utilisé pour enregistrer des parties d’échecs. Il décrit chaque coup joué dans une partie de manière lisible, en suivant la notation algébrique (ex. : 1. e4 e5 2. Nf3 Nc6).
+
 ## Exemples de pages
 
 - `/Accueil` — Page d’accueil
