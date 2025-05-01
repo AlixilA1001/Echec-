@@ -116,4 +116,4 @@ Ouvrez [http://localhost:8000](http://localhost:8000) dans votre navigateur.
 
 ## Auteur
 
-Projet développé par Alix Tieo & Moe Triquet - Université Paris Cité M1 Informatique IAD - Module Programation Web encadré par Mr. Antoine Martin.
+Projet développé par Alix Tieo & Moe Triquet - Université Paris Cité M1 Informatique IAD - Module Programmation Web encadré par Mr. Antoine Martin.
