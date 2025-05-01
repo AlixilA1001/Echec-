@@ -204,7 +204,7 @@ $('#abandonner').on('click', function () {
 
 // ======== Timer Start =========
 
-// Chrono démarre quand page chargée
+// Chrono démarre quand la page est chargée
 $(document).ready(function () {
   intervalChrono = setInterval(updateTimers, 1000);
 });

@@ -1,6 +1,6 @@
-# Chess System - Jeu d'Échecs Multijoueur & Contre Bot
+# Chess System - Jeu d'Échecs Multijoueur ou Ordinateur & Analyse de partie
 
-Bienvenue dans **Chess System**, un projet web de jeu d’échecs interactif permettant :
+**Chess System** est un projet web de jeu d’échecs interactif permettant :
 - de créer une partie en ligne avec un lien à partager
 - de jouer contre un bot doté d’une intelligence minimale
 - de suivre les pièces capturées et le statut de la partie
@@ -116,4 +116,4 @@ Ouvrez [http://localhost:8000](http://localhost:8000) dans votre navigateur.
 
 ## Auteur
 
-Projet développé par Alix Tieo & Moe Triquet - Université Paris Cité M1 Informatique IAD - Module Programation Web encadré par Mr. Antoine Martin.
+Projet développé par Alix Tieo & Moe Triquet - Université Paris Cité M1 Informatique IAD - Module Programmation Web encadré par Mr. Antoine Martin.

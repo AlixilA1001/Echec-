@@ -1,4 +1,3 @@
-// === Variables globales ===
 var whiteSquareGrey = '#a9a9a9';
 var blackSquareGrey = '#696969';
 var board = null;
